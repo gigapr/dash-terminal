@@ -88,9 +88,7 @@ func main() {
 
 	var current func() termui.Drawable
 
-	tickerCount := 1
 	draw(nil)
-	tickerCount++
 	uiEvents := ui.PollEvents()
 	ticker := time.NewTicker(500 * time.Millisecond).C
 	for {
@@ -107,7 +105,6 @@ func main() {
 
 		case <-ticker:
 			draw(current)
-			tickerCount++
 		}
 	}
 }
